@@ -3,7 +3,7 @@ import { FC } from "react"
 
 const Layout: FC = ({ children }) => {
   return (
-    <div className='flex flex-col justify-center container mx-auto'>
+    <div className='flex flex-col justify-center container'>
       <Head>
         <title>My Solutions Blog</title>
         <meta name='description' content='A blog' />
@@ -12,7 +12,7 @@ const Layout: FC = ({ children }) => {
       <h1 className='font-serif md:text-6xl text-5xl mt-8 px-10 py-4'>
         My Solutions Blog.
       </h1>
-      <main>{children}</main>
+      <main className="w-screen mx-auto">{children}</main>
     </div>
   )
 }

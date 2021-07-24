@@ -3,7 +3,9 @@ module.exports = {
   purge: [
     // Use *.tsx if using TypeScript
     "./pages/**/*.tsx",
+    "./pages/**/*.js",
     "./components/**/*.tsx",
+    "./components/**/*.js",
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
