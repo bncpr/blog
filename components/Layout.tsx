@@ -3,16 +3,16 @@ import { FC } from "react"
 
 const Layout: FC = ({ children }) => {
   return (
-    <div className='flex flex-col justify-center container'>
+    <div className='mx-auto flex flex-col space-y-10'>
       <Head>
         <title>My Solutions Blog</title>
         <meta name='description' content='A blog' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1 className='font-serif md:text-6xl text-5xl mt-8 px-10 py-4'>
+      <h1 className='font-mono md:self-center text-6xl mt-8 px-2 md:px-0'>
         My Solutions Blog.
       </h1>
-      <main className="w-screen mx-auto">{children}</main>
+      <main>{children}</main>
     </div>
   )
 }

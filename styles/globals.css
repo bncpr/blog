@@ -2,13 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Martel&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap');
-
 @layer base {
+  ::-webkit-scrollbar {
+    @apply w-1 h-1;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-200 rounded-lg;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-purple-300 rounded-lg;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-purple-500;
+  }
+  ::selection {
+    @apply bg-purple-400;
+  }
   body {
-    @apply font-plex-sans text-lg;
+    @apply text-lg;
   }
 }

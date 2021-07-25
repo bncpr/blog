@@ -1,11 +1,7 @@
 ---
-title: "project Euler #79"
+title: "Project Euler #79 Solution"
 date: "2022-07-22"
 ---
-import Link from "next/link"
-
-# Project Euler #79 Solution
-## 22-Jul-2021
 code:
 ```javascript
 import axios from "axios"
@@ -13,9 +9,11 @@ import axios from "axios"
 const data = await axios
   .get("https://projecteuler.net/project/resources/p079_keylog.txt")
   .then(res => [...new Set(res.data.split("\n").filter(x => !!x))])
-
+```
+```javascript
 const set = new Set(data.reduce((acc, x) => acc.concat(x.split("")), []))
-
+```
+```javascript
 function getBottom(set, data) {
   let bottom = null
   for (let x of set) {
@@ -26,7 +24,8 @@ function getBottom(set, data) {
   }
   return bottom
 }
-
+```
+```javascript
 function getPossiblePassCode(data, set, passCode = []) {
   if (set.size === 0) return passCode
   const bottom = getBottom(set, data)

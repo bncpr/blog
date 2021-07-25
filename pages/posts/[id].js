@@ -31,17 +31,20 @@ export async function getStaticPaths() {
 }
 
 const components = {
-  h1: props => <h1 className='font-serif text-4xl' {...props} />,
-  h2: props => <h2 className='font-mono text-base' {...props} />,
-  pre: props => <div className='w-max mx-auto' {...props} />,
+  p: props => <p className='prose prose-xl max-w-full' {...props} />,
+  pre: props => <div className='self-stretch' {...props} />,
   code: CodeBox,
 }
 export default function Post({ source, frontMatter }) {
   return (
-    <div className='lg:px-20 md:px-10 px-0 mt-5 flex flex-col justify-items-start w-max'>
+    <div className='flex flex-col space-y-5 items-start max-w-screen-md mx-auto px-3 md:px-0'>
       <Head>
         <title>{frontMatter.title}</title>
       </Head>
+      <header>
+        <h1 className='font-mono text-4xl uppercase'>{frontMatter.title}</h1>
+        <h2 className='font-mono text-base'>{frontMatter.date}</h2>
+      </header>
       <MDXRemote {...source} components={components} />
       <Link href='/'>
         <a className='block'>back</a>

@@ -18,10 +18,10 @@ export default function Home({
   allPostsData: Record<string, any>
 }) {
   return (
-    <div className='flex flex-col mt-6 px-14 space-y-2'>
+    <div className='flex flex-col items-stretch w-full mt-6 px-14 space-y-2  max-w-screen-lg mx-auto'>
       {allPostsData.map(({ id, date, title }: PostData) => (
         <Link href={"/posts/" + id} key={id}>
-          <a className='py-1 hover:bg-purple-50 pl-5'>
+          <a className='py-1 hover:bg-purple-50 hover:shadow-inner rounded pl-5 '>
             <ul>
               <li>
                 {title}
