@@ -1,6 +1,7 @@
 {
   "cSpell.ignoreWords": [
     "plugins",
-    "rehype"
+    "rehype",
+    "svgr"
   ]
 }

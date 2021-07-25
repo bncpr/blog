@@ -22,11 +22,11 @@ export default function Home({
     <div className='flex flex-col items-stretch space-y-5 md:px-0 px-2 max-w-screen-lg mx-auto'>
       <p className='prose prose-xl max-w-full'>
         Welcome to my solutions blog. I created this blog to motivate me into
-        solving more exercises, whether from a textbook I`&apos;`m studying in order to
-        put the new knowledge into practice, or from projects like the Euler
-        Project to further hone existing programming skills. This is not an
-        expert`&apos;`s blog, but a learner`&apos;`s blog. Feedback and discussions are
-        welcomed and appreciated.
+        solving more exercises, whether from a textbook I&apos;m studying in
+        order to put the new knowledge into practice, or from projects like the
+        Euler Project to further hone existing programming skills. This is not
+        an expert&apos;s blog, but a learner&apos;s blog. Feedback and
+        discussions are welcomed and appreciated.
       </p>
       {allPostsData.map(({ id, date, title }: PostData) => (
         <Link href={"/posts/" + id} key={id}>
