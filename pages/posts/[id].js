@@ -32,12 +32,8 @@ export async function getStaticPaths() {
 }
 
 const components = {
-  p: function (props) {
-    return <p className='prose prose-xl max-w-full' {...props} />
-  },
-  pre: function (props) {
-    return <div className='self-stretch' {...props} />
-  },
+  p: props => <p className='prose prose-xl max-w-full' {...props} />,
+  pre: props => <div className='self-stretch' {...props} />,
   code: CodeBox,
 }
 
