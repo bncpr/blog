@@ -32,10 +32,15 @@ export async function getStaticPaths() {
 }
 
 const components = {
-  p: props => <p className='prose prose-xl max-w-full' {...props} />,
-  pre: props => <div className='self-stretch' {...props} />,
+  p: function (props) {
+    return <p className='prose prose-xl max-w-full' {...props} />
+  },
+  pre: function (props) {
+    return <div className='self-stretch' {...props} />
+  },
   code: CodeBox,
 }
+
 export default function Post({ source, frontMatter }) {
   console.log(frontMatter.tags)
   return (
