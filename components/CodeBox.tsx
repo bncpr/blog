@@ -15,7 +15,7 @@ const CodeBox = ({ children, className }: any) => {
           className={className + " overflow-x-auto rounded-md"}
           style={{ ...style, padding: "20px" }}
         >
-          {tokens.map((line, i) => (
+          {tokens.slice(0, -1).map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
                 <span key={key} {...getTokenProps({ token, key })} />

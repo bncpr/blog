@@ -4,6 +4,7 @@ import { serialize } from "next-mdx-remote/serialize"
 import Head from "next/head"
 import Link from "next/link"
 import CodeBox from "../../components/CodeBox"
+import { Date } from "../../components/Date"
 import { getAllPostIds, getPostData } from "../../lib/posts"
 
 export const getStaticProps = async ({ params }) => {
@@ -36,18 +37,19 @@ const components = {
   code: CodeBox,
 }
 export default function Post({ source, frontMatter }) {
+  console.log(frontMatter.tags)
   return (
-    <div className='flex flex-col space-y-5 items-start max-w-screen-md mx-auto px-3 md:px-0'>
+    <div className='flex flex-col space-y-5 items-start max-w-screen-lg mx-auto px-3 lg:px-0 pb-3'>
       <Head>
         <title>{frontMatter.title}</title>
       </Head>
       <header>
         <h1 className='font-mono text-4xl uppercase'>{frontMatter.title}</h1>
-        <h2 className='font-mono text-base'>{frontMatter.date}</h2>
+        <Date dateString={frontMatter.date} className='font-mono' />
       </header>
       <MDXRemote {...source} components={components} />
       <Link href='/'>
-        <a className='block'>back</a>
+        <a className='font-semibold block btn-purple'>BACK</a>
       </Link>
     </div>
   )
