@@ -38,7 +38,6 @@ const components = {
 }
 
 export default function Post({ source, frontMatter }) {
-  console.log(frontMatter.tags)
   return (
     <div className='flex flex-col space-y-5 items-start max-w-screen-lg mx-auto px-3 lg:px-0 pb-3'>
       <Head>
