@@ -19,8 +19,8 @@ export default function Home({
   allPostsData: Record<string, any>
 }) {
   return (
-    <div className='flex flex-col items-stretch space-y-5 md:px-0 px-2 max-w-screen-lg mx-auto'>
-      <p className='prose prose-xl max-w-full'>
+    <div className='flex flex-col items-stretch max-w-screen-lg px-2 mx-auto space-y-5 md:px-0'>
+      <p className='max-w-full prose prose-xl'>
         Welcome to my solutions blog. I created this blog to motivate me into
         solving more exercises, whether from a textbook I&apos;m studying in
         order to put the new knowledge into practice, or from projects like the
@@ -30,7 +30,7 @@ export default function Home({
       </p>
       {allPostsData.map(({ id, date, title }: PostData) => (
         <Link href={"/posts/" + id} key={id}>
-          <a className='transition duration-300 hover:bg-purple-50 hover:shadow-inner rounded pl-5 focus:ring-2 focus:ring-purple-200 '>
+          <a className='pl-5 transition duration-300 rounded hover:bg-purple-50 hover:shadow-inner focus:ring-2 focus:ring-purple-100 '>
             <article className='p-2'>
               <h3 className='font-mono text-xl uppercase'>{title}</h3>
               <Date dateString={date} className='font-mono' />

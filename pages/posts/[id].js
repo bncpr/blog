@@ -5,6 +5,7 @@ import Head from "next/head"
 import Link from "next/link"
 import CodeBox from "../../components/CodeBox"
 import { Date } from "../../components/Date"
+import { ExternalLink, ExternalLinkWithIcon } from "../../components/ExternalLink"
 import { getAllPostIds, getPostData } from "../../lib/posts"
 
 export const getStaticProps = async ({ params }) => {
@@ -32,14 +33,21 @@ export async function getStaticPaths() {
 }
 
 const components = {
-  p: props => <p className='prose prose-xl max-w-full' {...props} />,
+  a: props => <ExternalLinkWithIcon {...props} />,
+  p: props => <p className='max-w-full prose prose-xl' {...props} />,
   pre: props => <div className='self-stretch' {...props} />,
   code: CodeBox,
+  blockquote: props => (
+    <blockquote
+      className='py-4 pl-6 border-l-4 border-blue-500 shadow-md bg-gray-50'
+      {...props}
+    />
+  ),
 }
 
 export default function Post({ source, frontMatter }) {
   return (
-    <div className='flex flex-col space-y-5 items-start max-w-screen-lg mx-auto px-3 lg:px-0 pb-3'>
+    <div className='flex flex-col items-start max-w-screen-lg px-3 pb-3 mx-auto space-y-5 lg:px-0'>
       <Head>
         <title>{frontMatter.title}</title>
       </Head>
@@ -49,7 +57,7 @@ export default function Post({ source, frontMatter }) {
       </header>
       <MDXRemote {...source} components={components} />
       <Link href='/'>
-        <a className='font-semibold block btn-purple'>BACK</a>
+        <a className='block font-semibold btn-purple'>BACK</a>
       </Link>
     </div>
   )
