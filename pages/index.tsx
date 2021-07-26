@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next"
 import Link from "next/link"
+import { FunctionComponent } from "react"
 import { Date } from "../components/Date"
 import { getSortedPostsData } from "../lib/posts"
 import { PostData } from "../types/postData"
@@ -13,11 +14,11 @@ export const getStaticProps: GetStaticProps = () => {
   }
 }
 
-export default function Home({
-  allPostsData,
-}: {
+type HomeProps = {
   allPostsData: Record<string, any>
-}) {
+}
+
+const Home: FunctionComponent<HomeProps> = ({ allPostsData }) => {
   return (
     <div className='flex flex-col items-stretch max-w-screen-lg px-2 mx-auto space-y-5 md:px-0'>
       <p className='max-w-full prose prose-xl'>
@@ -41,3 +42,5 @@ export default function Home({
     </div>
   )
 }
+
+export default Home

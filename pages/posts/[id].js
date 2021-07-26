@@ -5,7 +5,7 @@ import Head from "next/head"
 import Link from "next/link"
 import CodeBox from "../../components/CodeBox"
 import { Date } from "../../components/Date"
-import { ExternalLink, ExternalLinkWithIcon } from "../../components/ExternalLink"
+import { ExternalLinkWithIcon } from "../../components/ExternalLink"
 import { getAllPostIds, getPostData } from "../../lib/posts"
 
 export const getStaticProps = async ({ params }) => {

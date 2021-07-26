@@ -18,7 +18,7 @@ const Layout: FC = ({ children }) => {
           <span className='sr-only'>Twitter Account</span>
         </ExternalLink>
         <ExternalLink href='https://github.com/bncpr/my-solutions-blog-next'>
-          <GithubIcon className='w-full h-full  fill-current text-gray-600 p-0.5' />
+          <GithubIcon className='w-full h-full  fill-current text-gray-600 p-1' />
           <span className='sr-only'>GitHub Repository</span>
         </ExternalLink>
       </div>
