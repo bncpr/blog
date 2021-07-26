@@ -54,6 +54,16 @@ export default function Post({ source, frontMatter }) {
       <header>
         <h1 className='font-mono text-4xl uppercase'>{frontMatter.title}</h1>
         <Date dateString={frontMatter.date} className='font-mono' />
+        <div className='flex flex-wrap mt-3'>
+          {frontMatter.tags.map(tag => (
+            <span
+              className='px-3 py-2 m-1 bg-purple-500 rounded-full text-xs uppercase font-semibold tracking-widest bg-opacity-70'
+              key={tag}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </header>
       <MDXRemote {...source} components={components} />
       <Link href='/'>
