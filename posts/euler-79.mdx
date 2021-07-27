@@ -39,7 +39,7 @@ Assuming we have only one possible solution to the problem means that the passco
 > 3. Remove this digit from the first position in all the strings and shift those strings one position. For example "762" &rarr; "62".
 > 4. Repeat until all strings are empty and answer is complete.
 
-This only works if we assume the above. In step one we depend that we will always find one digit that fits our constraint. Otherwise, the data is incorrect or we face a completely different problem with repeating digits.
+This only works if we assume the above. In step one we depend on the assumption that we will always find one digit that fits our constraint. Otherwise, the data is incorrect or we face a completely different problem with repeating digits.
 
 Given the four steps we can write a simple recursive procedure that will find the passcode for use. In order to tidy things up a bit, it will help to have the set of possible digits that compose the passcode:
 
