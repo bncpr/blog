@@ -33,13 +33,15 @@ export async function getStaticPaths() {
 }
 
 const components = {
+  ol: props => <ol className='list-decimal p-2 prose prose-xl' {...props} />,
+  li: props => <li className='pl-2' {...props} />,
   a: props => <ExternalLinkWithIcon {...props} />,
   p: props => <p className='max-w-full prose prose-xl' {...props} />,
   pre: props => <div className='self-stretch' {...props} />,
   code: CodeBox,
   blockquote: props => (
     <blockquote
-      className='py-4 pl-6 border-l-4 border-blue-500 shadow-md bg-gray-50'
+      className='w-full px-6 py-4 border-l-4 border-blue-500 shadow-md bg-gray-50'
       {...props}
     />
   ),
@@ -57,7 +59,7 @@ export default function Post({ source, frontMatter }) {
         <div className='flex flex-wrap mt-3'>
           {frontMatter.tags.map(tag => (
             <span
-              className='px-3 py-2 m-1 bg-purple-500 rounded-full text-xs uppercase font-semibold tracking-widest bg-opacity-70'
+              className='px-3 py-2 m-1 text-xs font-semibold tracking-widest uppercase bg-purple-500 rounded-full bg-opacity-70'
               key={tag}
             >
               {tag}
