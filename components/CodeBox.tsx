@@ -12,8 +12,11 @@ const CodeBox = ({ children, className }: any) => {
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
-          className={className + " overflow-x-auto rounded-md"}
-          style={{ ...style, padding: "20px" }}
+          className={
+            className +
+            " overflow-x-auto rounded-md dark:brightness-125 dark:border dark:border-gray-900 bg-gray-900"
+          }
+          style={{ ...style, padding: "20px", backgroundColor: "" }}
         >
           {tokens.slice(0, -1).map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>

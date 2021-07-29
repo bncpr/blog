@@ -33,15 +33,20 @@ export async function getStaticPaths() {
 }
 
 const components = {
-  ol: props => <ol className='list-decimal p-2 prose prose-xl' {...props} />,
-  li: props => <li className='pl-2' {...props} />,
-  a: props => <ExternalLinkWithIcon {...props} />,
-  p: props => <p className='max-w-full prose prose-xl' {...props} />,
+  ol: props => <ol className='p-2 prose prose-xl list-decimal' {...props} />,
+  li: props => <li className='pl-2 dark:text-white' {...props} />,
+  a: props => (
+    <ExternalLinkWithIcon className='dark:text-gray-300' {...props} />
+  ),
+  p: props => (
+    <p className='max-w-full px-3 prose prose-xl dark:text-white' {...props} />
+  ),
+  strong: props => <strong className='dark:text-white' {...props} />,
   pre: props => <div className='self-stretch' {...props} />,
   code: CodeBox,
   blockquote: props => (
     <blockquote
-      className='w-full px-6 py-4 border-l-4 border-blue-500 shadow-md bg-gray-50'
+      className='w-full px-6 py-4 border-l-4 border-blue-500 shadow-md bg-gray-50 dark:bg-gray-800'
       {...props}
     />
   ),
@@ -49,11 +54,11 @@ const components = {
 
 export default function Post({ source, frontMatter }) {
   return (
-    <div className='flex flex-col items-start max-w-screen-lg px-3 pb-3 mx-auto space-y-5 lg:px-0'>
+    <div className='flex flex-col items-start max-w-screen-lg pb-3 mx-auto space-y-5 lg:px-0 '>
       <Head>
         <title>{frontMatter.title}</title>
       </Head>
-      <header>
+      <header className='pl-3'>
         <h1 className='font-mono text-4xl uppercase'>{frontMatter.title}</h1>
         <Date dateString={frontMatter.date} className='font-mono' />
         <div className='flex flex-wrap mt-3'>

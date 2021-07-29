@@ -14,20 +14,20 @@
   }
   /* Track */
   ::-webkit-scrollbar-track {
-    @apply bg-gray-200 rounded-lg;
+    @apply bg-gray-200 rounded-lg dark:bg-gray-600;
   }
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-purple-300 rounded-lg;
+    @apply bg-purple-300 rounded-lg dark:bg-purple-600;
   }
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-purple-500;
+    @apply bg-purple-500 ;
   }
   ::selection {
     @apply bg-purple-400;
   }
   body {
-    @apply text-lg;
+    @apply text-lg dark:bg-gray-900 dark:text-white;
   }
 }
