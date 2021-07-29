@@ -1,6 +1,6 @@
 import { Switch } from "@headlessui/react"
 import Head from "next/head"
-import { FC, useLayoutEffect, useState } from "react"
+import { FC, useEffect, useLayoutEffect, useState } from "react"
 import GithubIcon from "../public/github.svg"
 import TwitterIcon from "../public/twitterIcon.svg"
 import { ExternalLink } from "./ExternalLink"
@@ -8,7 +8,7 @@ import { ExternalLink } from "./ExternalLink"
 const Layout: FC = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
@@ -20,7 +20,7 @@ const Layout: FC = ({ children }) => {
       document.documentElement.classList.remove("dark")
       setDarkMode(false)
     }
-  })
+  }, [])
 
   const onChangeDarkMode = () => {
     document.documentElement.classList.toggle("dark")
