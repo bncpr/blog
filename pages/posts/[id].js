@@ -33,20 +33,25 @@ export async function getStaticPaths() {
 }
 
 const components = {
-  ol: props => <ol className='p-2 prose prose-xl list-decimal' {...props} />,
-  li: props => <li className='pl-2 dark:text-white' {...props} />,
+  ol: props => (
+    <ol className='pl-4 prose list-decimal md:prose-xl' {...props} />
+  ),
+  li: props => <li className='pl-1 md:pl-2 dark:text-white' {...props} />,
   a: props => (
     <ExternalLinkWithIcon className='dark:text-gray-300' {...props} />
   ),
   p: props => (
-    <p className='max-w-full px-3 prose prose-xl dark:text-white' {...props} />
+    <p
+      className='max-w-full px-2 prose md:px-3 md:prose-xl dark:text-white'
+      {...props}
+    />
   ),
   strong: props => <strong className='dark:text-white' {...props} />,
   pre: props => <div className='self-stretch' {...props} />,
   code: CodeBox,
   blockquote: props => (
     <blockquote
-      className='w-full px-6 py-4 border-l-4 border-blue-500 shadow-md bg-gray-50 dark:bg-gray-800'
+      className='w-full px-2 py-4 border-l-4 border-blue-500 shadow-md md:px-6 bg-gray-50 dark:bg-gray-800'
       {...props}
     />
   ),
@@ -59,12 +64,14 @@ export default function Post({ source, frontMatter }) {
         <title>{frontMatter.title}</title>
       </Head>
       <header className='pl-3'>
-        <h1 className='font-mono text-4xl uppercase'>{frontMatter.title}</h1>
+        <h1 className='font-mono text-2xl uppercase md:text-4xl'>
+          {frontMatter.title}
+        </h1>
         <Date dateString={frontMatter.date} className='font-mono' />
         <div className='flex flex-wrap mt-3'>
           {frontMatter.tags.map(tag => (
             <span
-              className='px-3 py-2 m-1 text-xs font-semibold tracking-widest uppercase bg-purple-500 rounded-full bg-opacity-70'
+              className='px-2 py-1 m-1 text-xs font-semibold tracking-widest uppercase bg-purple-500 rounded-full md:px-3 md:py-2 bg-opacity-70'
               key={tag}
             >
               {tag}

@@ -28,6 +28,6 @@
     @apply bg-purple-400;
   }
   body {
-    @apply text-lg dark:bg-gray-900 dark:text-white transition-colors ;
+    @apply md:text-lg dark:bg-gray-900 dark:text-white transition-colors ;
   }
 }
