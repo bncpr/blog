@@ -31,8 +31,8 @@ const Home: FunctionComponent<HomeProps> = ({ allPostsData }) => {
       </p>
       {allPostsData.map(({ id, date, title }: PostData) => (
         <Link href={"/posts/" + id} key={id}>
-          <a className='pl-2 md:pl-5 rounded hover:bg-purple-50 dark:hover:text-black dark:focus:ring-purple-500 dark:hover:bg-purple-400 hover:shadow-inner'>
-            <article className='p-2'>
+          <a>
+            <article className='p-2 md:pl-5 rounded hover:bg-purple-50 dark:hover:text-black dark:focus:ring-purple-500 dark:hover:bg-purple-400 hover:shadow-inner'>
               <h3 className='font-mono text-lg md:text-xl uppercase'>
                 {title}
               </h3>
