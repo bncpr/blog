@@ -1,7 +1,7 @@
-import { Switch } from "@headlessui/react"
 import Head from "next/head"
 import { FC, useEffect, useState } from "react"
 import GithubIcon from "../public/github.svg"
+import Moon from "../public/moon.svg"
 import TwitterIcon from "../public/twitter-circle-hollow.svg"
 import { ExternalLink } from "./ExternalLink"
 
@@ -40,22 +40,11 @@ const Layout: FC = ({ children }) => {
         <meta name='description' content='A blog' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className='absolute left-0 flex items-center p-3 space-x-1'>
-        <label className='mr-1 text-xs font-semibold'>DARK:</label>
-        <Switch
-          checked={darkMode}
-          onChange={onChangeDarkMode}
-          className={`${
-            darkMode ? "bg-blue-800" : "bg-gray-200"
-          } relative inline-flex items-center h-6 rounded-full w-11 md:scale-90 scale-75`}
-        >
-          <span className='sr-only'>Enable notifications</span>
-          <span
-            className={`${
-              darkMode ? "translate-x-6" : "translate-x-1"
-            } inline-block w-4 h-4 transform bg-white rounded-full`}
-          />
-        </Switch>
+      <div className='absolute left-0 p-2 m-2 transition-colors rounded-md dark:hover:bg-opacity-10 hover:bg-gray-200'>
+        <Moon
+          className='w-5 h-5 text-gray-900 cursor-pointer fill-current dark:text-white'
+          onClick={onChangeDarkMode}
+        />
       </div>
       <div className='absolute right-0 flex flex-row m-2 mr-3 space-x-3'>
         <ExternalLink href='https://twitter.com/_bncpr'>
