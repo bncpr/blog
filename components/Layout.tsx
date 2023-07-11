@@ -5,7 +5,11 @@ import Moon from '../public/moon.svg'
 import TwitterIcon from '../public/twitter-circle-hollow.svg'
 import { ExternalLink } from './ExternalLink'
 
-const Layout: FC = ({ children }) => {
+interface Props {
+  children: React.ReactNode
+}
+
+const Layout: FC<Props> = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {

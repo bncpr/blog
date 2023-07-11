@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react"
 
 type ExternalLinkProps = {
+  children: React.ReactNode
   href: string
   className?: string
 }
