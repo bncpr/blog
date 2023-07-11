@@ -1,34 +1,34 @@
-import Head from "next/head"
-import { FC, useEffect, useState } from "react"
-import GithubIcon from "../public/github.svg"
-import Moon from "../public/moon.svg"
-import TwitterIcon from "../public/twitter-circle-hollow.svg"
-import { ExternalLink } from "./ExternalLink"
+import Head from 'next/head'
+import { FC, useEffect, useState } from 'react'
+import GithubIcon from '../public/github.svg'
+import Moon from '../public/moon.svg'
+import TwitterIcon from '../public/twitter-circle-hollow.svg'
+import { ExternalLink } from './ExternalLink'
 
 const Layout: FC = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      document.documentElement.classList.add("dark")
+      document.documentElement.classList.add('dark')
       setDarkMode(true)
     } else {
-      document.documentElement.classList.remove("dark")
+      document.documentElement.classList.remove('dark')
       setDarkMode(false)
     }
   }, [])
 
   const onChangeDarkMode = () => {
-    document.documentElement.classList.toggle("dark")
+    document.documentElement.classList.toggle('dark')
     if (!darkMode) {
-      localStorage.setItem("theme", "dark")
+      localStorage.setItem('theme', 'dark')
       setDarkMode(true)
     } else {
-      localStorage.removeItem("theme")
+      localStorage.removeItem('theme')
       setDarkMode(false)
     }
   }
@@ -36,7 +36,7 @@ const Layout: FC = ({ children }) => {
   return (
     <div className='flex flex-col mx-auto'>
       <Head>
-        <title>My Solutions Blog</title>
+        <title>Learning in Progress</title>
         <meta name='description' content='A blog' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
@@ -51,13 +51,13 @@ const Layout: FC = ({ children }) => {
           <TwitterIcon className='w-6 h-6 text-blue-500 fill-current md:w-8 md:h-8 hover:brightness-105' />
           <span className='sr-only'>Twitter Account</span>
         </ExternalLink>
-        <ExternalLink href='https://github.com/bncpr/my-solutions-blog-next'>
+        <ExternalLink href='https://github.com/bncpr'>
           <GithubIcon className='w-6 h-6 text-purple-600 fill-current md:w-8 md:h-8 hover:brightness-110' />
           <span className='sr-only'>GitHub Repository</span>
         </ExternalLink>
       </div>
       <h1 className='px-3 py-5 mt-8 font-mono text-4xl md:py-8 md:text-6xl md:self-center md:px-0'>
-        My Solutions Blog.
+        Learning in Progress
       </h1>
 
       <main>{children}</main>
