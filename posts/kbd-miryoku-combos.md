@@ -1,0 +1,18 @@
+---
+title: Finding the Keys Between the Keys
+subtitle: How to Use Combos with Miryoku Layout
+date: "2023-09-05"
+tags: [mechanical-keyboard, keyboard-layout, keyboard-combos, QMK]
+---
+
+I've been using the [Miryoku](https://github.com/manna-harbour/miryoku) layout on my custom [split keyboard](https://github.com/bncpr/askew-kbd) for a few months now. I love its simplicity and elegance, yet I've found that certain sequences are hard to type, in particular, ones that involve switching between layers quickly. For example, the string `+=` which requires to switch from the Symbol layer to the Numbers layer which are on adjacent thumbs keys. Rolling the thumb is not a natural movement. Combos, as implemented in [QMK](https://docs.qmk.fm/#/feature_combo), enable pressing multiple keys at the same time to produce a different key, or a macro. I've experimented with different approaches to laying out the combos on the base layer keymap. It was only after learning a bit of stenography using [Plover](https://www.openstenoproject.org/plover/), that I found all the keys that were hiding between the keys.
+
+At first I was unsure about the best way to use combos. One way of using combos is by assigning them to mnemonic keys, for example, pressing `M` and `E` keys together will result in the keyboard outputting **M**y **E**mail, `M` and `P` for **M**y **P**hone number which makes filling out forms a breeze. But if you are switching between layouts, you will either have to assign those combos to the keys in all layouts, which is undesirable, or have all combos apply only from the base layer, [which is possible in QMK](https://docs.qmk.fm/#/feature_combo?id=layer-independent-combos) but forces you to remember one keyboard layout while using another.
+
+Another approach is to assign the combos to keys that are physically memorable. For example, one of the first combos I found convenient was assigning the right index finger and middle finger (`JK` in qwerty) to `ESC`. This is prime real estate on the keyboard: two adjacent keys on the home row. Using Vim a lot where `ESC` is king proved the combo a success. I have a few more of these like pinky + ring finger on the left and right hand produce `HOME` and `END` respectively, and middle + ring finger for `LEFT` and `RIGHT` arrows for easy navigation between the line without switching to the `NAV` layer, which is handy outside of Vim, but also in Vim so I don't have to exit insert mode when I don't necessarily want to.
+
+However, using a reduced keys keyboard or layout like Miryoku means you don't have many of these combos positions available. If you only have 5 columns for each hand you have only 4 of those combos on the home row. It's true that if with 3 rows, that's 12 per hand, but these combos become much less comfortable the farther you are from the home row.
+
+In stenography, they use a special keyboard that makes chording (essentially combos) easier to execute. The keyboard has only two rows with special keys that make it easier to press both keys together—as if you are pressing a key between the two keys. Because my keyboard has Choc low profile keys with Choc spacings, I found it surprisingly easy to press these combos even without special keys. ![Combos on askew-kbd](/kbd-combos.gif)
+
+This basically adds 8 more keys almost directly under my fingertips for each hand. I use the top row for numbers and it's great for when I want to hit a single digit like when typing variable names `foo1`. The rest I use for all those symbols that are too common when writing code and shifting to another layer just slows slows you down like `;` and `:`, or `-` and `_`.
