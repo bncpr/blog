@@ -1,9 +1,13 @@
 import { Highlight, themes } from 'prism-react-renderer'
 
-const CodeBox = ({ children, className }: any) => {
-  const language = className.replace(/language-/, '')
-  return (
-    <Highlight theme={themes.nightOwl} code={children} language={language}>
+const CodeBox = ({ className, ...props }: any) => {
+  const match = /language-(\w+)/.exec(className || '')
+  return match ? (
+    <Highlight
+      theme={themes.nightOwl}
+      code={props.children}
+      language={match[1]}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre
           className={
@@ -22,6 +26,11 @@ const CodeBox = ({ children, className }: any) => {
         </pre>
       )}
     </Highlight>
+  ) : (
+    <code
+      className='rounded py-1 px-2 shadow-md bg-gray-100 dark:bg-gray-700'
+      {...props}
+    />
   )
 }
 
