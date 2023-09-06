@@ -67,6 +67,11 @@ export default function Post({ source, frontMatter }) {
         <h1 className='font-mono text-2xl uppercase md:text-4xl'>
           {frontMatter.title}
         </h1>
+        {frontMatter.subtitle && (
+          <h2 className='fornt-mono py-1 text-xl md:text-2xl'>
+            {frontMatter.subtitle}
+          </h2>
+        )}
         <Date dateString={frontMatter.date} className='font-mono' />
         <div className='flex flex-wrap mt-3'>
           {frontMatter.tags.map((tag) => (

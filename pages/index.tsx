@@ -24,10 +24,12 @@ const Home: FunctionComponent<HomeProps> = ({ allPostsData }) => {
       <p className='max-w-full prose rounded md:prose-xl dark:text-white md:px-2'>
         A personal blog about learning and building stuff.
       </p>
-      {allPostsData.map(({ id, date, title }: PostData) => (
+      {allPostsData.map(({ id, date, title, subtitle }: PostData) => (
         <Link href={'/posts/' + id} key={id}>
           <article className='p-2 rounded md:pl-5 hover:bg-purple-50 dark:hover:text-black dark:focus:ring-purple-500 dark:hover:bg-purple-400 hover:shadow-inner'>
-            <h3 className='font-mono text-lg uppercase md:text-xl'>{title}</h3>
+            <h3 className='font-mono text-lg uppercase md:text-xl'>
+              {title + ((subtitle && ': ' + subtitle) || '')}
+            </h3>
             <Date dateString={date} className='font-mono' />
           </article>
         </Link>
