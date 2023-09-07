@@ -40,7 +40,7 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <div className='flex flex-col mx-auto'>
       <Head>
-        <title>Learning in Progress</title>
+        <title>Less Art More Matter</title>
         <meta name='description' content='A blog' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
@@ -61,7 +61,7 @@ const Layout: FC<Props> = ({ children }) => {
         </ExternalLink>
       </div>
       <h1 className='px-3 py-5 mt-8 font-mono text-4xl md:py-8 md:text-6xl md:self-center md:px-0'>
-        Learning in Progress
+        Less Art More Matter
       </h1>
 
       <main>{children}</main>

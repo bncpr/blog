@@ -22,7 +22,7 @@ const Home: FunctionComponent<HomeProps> = ({ allPostsData }) => {
   return (
     <div className='flex flex-col items-stretch max-w-screen-lg px-2 mx-auto space-y-5 md:px-0'>
       <p className='max-w-full prose rounded md:prose-xl dark:text-white md:px-2'>
-        A personal blog about learning technology and building stuff.
+        A personal blog about learning and building stuff.
       </p>
       {allPostsData.map(({ id, date, title }: PostData) => (
         <Link href={'/posts/' + id} key={id}>
