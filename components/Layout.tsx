@@ -44,9 +44,9 @@ const Layout: FC<Props> = ({ children }) => {
         <meta name='description' content='A blog' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className='absolute left-0 p-2 m-2 transition-colors rounded-md dark:hover:bg-opacity-10 hover:bg-gray-200'>
+      <div className='absolute left-0 p-2.5 transition-colors rounded-md dark:hover:bg-opacity-10 hover:bg-gray-200'>
         <Moon
-          className='w-5 h-5 text-gray-900 cursor-pointer fill-current dark:text-white'
+          className='w-5 h-5 md:w-6 md:h-6 text-gray-900 cursor-pointer fill-current dark:text-white'
           onClick={onChangeDarkMode}
         />
       </div>
