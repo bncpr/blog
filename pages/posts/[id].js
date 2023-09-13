@@ -59,7 +59,7 @@ const components = {
 
 export default function Post({ source, frontMatter }) {
   return (
-    <div className='flex flex-col items-start max-w-screen-lg pb-3 mx-auto space-y-5 lg:px-0 '>
+    <div className='flex flex-col items-start max-w-screen-lg pb-3 px-3 mx-auto space-y-5 lg:px-0 '>
       <Head>
         <title>{frontMatter.title}</title>
       </Head>
