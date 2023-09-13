@@ -1,4 +1,5 @@
 import matter from 'gray-matter'
+import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
@@ -48,6 +49,11 @@ const components = {
   ),
   strong: (props) => <strong className='dark:text-white' {...props} />,
   pre: (props) => <div className='self-stretch' {...props} />,
+  img: (props) => (
+    <div className='flex justify-center'>
+      <Image src={props.src} alt={props.alt} width={640} height={640} />
+    </div>
+  ),
   code: CodeBox,
   blockquote: (props) => (
     <blockquote
